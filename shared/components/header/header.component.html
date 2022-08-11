@@ -1,0 +1,156 @@
+<!-- Navigation Starts Here
+    =========================== -->
+<header>
+    <nav id="main-navigation" class="navbar navbar-expand-lg navbar-light"
+        [ngClass]="{'sticky': scrollPosition > 20 ||  currentURL !== '/'}">
+        <div class="logo-container">
+            <a class="navbar-brand logo" [routerLink]="'/'" (click)="goToHome()"><img src="../../assets/img/logo.svg"
+                    alt="Logo"></a>
+        </div>
+        <button class="navbar-toggler" [class.active]="isMenuOpen" #toggleButton (click)="toggleMenu1($event)"
+            type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="collapse navbar-collapse doNotClose" [class.show]="isMenuOpen" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);">Trainers & Specialists</a>
+                    <ul class="submenu-nav">
+                        <li>
+                            <a href="javascript:void(0);" (click)="toggleMenu1($event)"
+                                [routerLink]="[routesConfig.routes.appSearching.main + '/' + goToAppSearch({SearchType: eSearchType.TrainerSearch, type: eTrainerExpertyType.FitnessTrainers}, 'Trainers & Specialists - Fitness Trainers')]">Fitness
+                                Trainers
+                                <img src="../../assets/img/menu-arrow.svg" class="menu-arrow" alt="Menu Arrow">
+                                <img src="../../assets/img/menu-arrow-white.svg" class="hover-menu-arrow"
+                                    alt="Menu Arrow">
+                            </a>
+                            <ul>
+                                <li *ngFor="let item2 of getFitnessTrainers() |sortBy:'asc':'name'"><a
+                                        href="javascript:void(0);" (click)="toggleMenu1($event)"
+                                        [routerLink]="[routesConfig.routes.appSearching.main + '/' + goToAppSearch(item2, 'Trainers & Specialists - Fitness Trainers')]">{{item2.name}}</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li><a href="javascript:void(0);" (click)="toggleMenu1($event)"
+                                [routerLink]="[routesConfig.routes.appSearching.main + '/' + goToAppSearch({SearchType: eSearchType.TrainerSearch, type: eTrainerExpertyType.SpacialityTrainers}, 'Trainers & Specialists - Specialty Trainers')]">Specialty
+                                Trainers
+                                <img src="../../assets/img/menu-arrow.svg" class="menu-arrow" alt="Menu Arrow">
+                                <img src="../../assets/img/menu-arrow-white.svg" class="hover-menu-arrow"
+                                    alt="Menu Arrow">
+                            </a>
+                            <ul>
+                                <li *ngFor="let item2 of getSpacialityTrainers() |sortBy:'asc':'name'"><a
+                                        href="javascript:void(0);" (click)="toggleMenu1($event)"
+                                        [routerLink]="[routesConfig.routes.appSearching.main + '/' + goToAppSearch(item2, 'Trainers & Specialists - Specialty Trainers')]">{{item2.name}}</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li><a href="javascript:void(0);" (click)="toggleMenu1($event)"
+                                [routerLink]="[routesConfig.routes.appSearching.main + '/' + goToAppSearch({SearchType: eSearchType.TrainerSearch, type: eTrainerExpertyType.MindBody}, 'Trainers & Specialists - Mind & Body')]">Mind
+                                & Body
+                                <img src="../../assets/img/menu-arrow.svg" class="menu-arrow" alt="Menu Arrow">
+                                <img src="../../assets/img/menu-arrow-white.svg" class="hover-menu-arrow"
+                                    alt="Menu Arrow">
+                            </a>
+                            <ul>
+                                <li *ngFor="let item2 of getMindBody() |sortBy:'asc':'name'"><a
+                                        href="javascript:void(0);" (click)="toggleMenu1($event)"
+                                        [routerLink]="[routesConfig.routes.appSearching.main + '/' + goToAppSearch(item2, 'Trainers & Specialists - Mind & Body')]">{{item2.name}}</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);">Gyms & Home Fitness</a>
+                    <ul class="submenu-nav">
+                        <li><a href="javascript:void(0);" (click)="toggleMenu1($event)"
+                                [routerLink]="[routesConfig.routes.appSearching.main + '/' + goToAppSearch({SearchType: eSearchType.AppSearch}, 'Gyms & Home Fitness - Fitness App')]">Fitness
+                                Apps</a>
+
+                        </li>
+                        <li><a href="javascript:void(0);" (click)="toggleMenu1($event)"
+                                [routerLink]="[routesConfig.routes.appSearching.main + '/' + goToAppSearch({SearchType: eSearchType.GYMSearch}, 'Gyms & Home Fitness - Gyms')]">Gyms</a>
+
+                        </li>
+                        <li><a href="javascript:void(0);" (click)="toggleMenu1($event)"
+                                [routerLink]="[routesConfig.routes.appSearching.main + '/' + goToAppSearch({SearchType: eSearchType.ClassSearch}, 'Gyms & Home Fitness - Classes & Studios')]">Classes
+                                & Studios</a>
+
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);">Health & Nutrition</a>
+                    <ul class="submenu-nav">
+                        <li><a href="javascript:void(0);" (click)="toggleMenu1($event)"
+                                [routerLink]="[routesConfig.routes.appSearching.main + '/' + goToAppSearch({SearchType: eSearchType.NutritionSearch}, 'Health & Nutrition - Nutrition & Food Apps')]">
+                                Health & Nutrition Apps
+                                <img src="../../assets/img/menu-arrow.svg" class="menu-arrow" alt="Menu Arrow">
+                                <img src="../../assets/img/menu-arrow-white.svg" class="hover-menu-arrow"
+                                    alt="Menu Arrow">
+                            </a>
+                            <ul>
+                                <li *ngFor="let item2 of fitnessNutrationServices |sortBy:'asc':'name'"><a
+                                        href="javascript:void(0);" (click)="toggleMenu1($event)"
+                                        [routerLink]="[routesConfig.routes.appSearching.main + '/' + goToAppSearch(item2, 'Health & Nutrition - Nutrition & Food Apps')]">{{item2.name}}</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="community-nav">
+                <li class="nav-item"><a (click)="toggleMenu1($event)" class="nav-link free-classes-btn" 
+                        [routerLink]="[routesConfig.routes.freeClass.basePath]">Free Classes</a></li>
+                <li class="nav-item"><a class="nav-link" [routerLink]="[routesConfig.routes.blog.basePath]">Blog</a>
+                </li>
+
+                <li class="nav-item m-lft" *ngIf="user && user.name"><a (click)="toggleMenu1($event)" class="nav-link" [routerLink]="[routesConfig.routes.trainerDashboard.basePath]">{{user?.name}}</a></li>
+                <li class="nav-item profile-pic" *ngIf="user && user.imageThumbnailUrl"><a (click)="toggleMenu1($event)" class="nav-link" [routerLink]="[routesConfig.routes.trainerDashboard.basePath]"><img
+                            src="{{user.imageThumbnailUrl}}" alt="User"></a></li>
+
+                <li class="nav-item active-bold" *ngIf="!user || !user.email"><a (click)="toggleMenu1($event)" class="nav-link"
+                        href="javascript:void(0);" [routerLink]="[routesConfig.routes.joincommunity.basePath]">Join The
+                        Community</a></li>
+                <li class="nav-item">
+                    <a class="nav-link burger-menu" [class.active]="isMenuwebOpen" #toggleButton
+                        (click)="toggleMenu($event)" href="javascript:void(0);">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                    <ul class="login-nav" [class.active]="isMenuwebOpen" *ngIf="!user || !user.email">
+                        <li><a (click)="toggleMenu1($event)" [routerLink]="[routesConfig.routes.account.login]">Log In</a></li>
+                        <li><a (click)="toggleMenu1($event)" [routerLink]="[routesConfig.routes.joincommunity.basePath]">Register</a></li>
+                    </ul>
+                    <ul class="login-nav" [class.active]="isMenuwebOpen" *ngIf="(user && user.email)">
+                        <li
+                            *ngIf="userEProfileType !== eProfileType.FitnessApp && userEProfileType !== eProfileType.BusinessFitnessNeutrationApp && userEProfileType !== eProfileType.BusinessFitnessGym && userEProfileType !== eProfileType.BusinessFitnessClass  ">
+                            <a (click)="toggleMenu1($event)" [routerLink]="[routesConfig.routes.trainerDashboard.basePath + '/messages']">Messages</a>
+                        </li>
+                        <li><a (click)="toggleMenu1($event)" [routerLink]="[routesConfig.routes.trainerDashboard.basePath]">Dashboard</a></li>
+                        <li><a href="javascript:void(0);" (click)="onLogout()">Log Out</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <section class="progress-bar" *ngIf="progressBarMode === 'query'">
+        <mat-progress-bar [color]="'primary'" [mode]="progressBarMode">
+        </mat-progress-bar>
+    </section>
+
+</header>
+
+<!-- Navigation Ends Here
+  ========================= -->

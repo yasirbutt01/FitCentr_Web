@@ -1,0 +1,135 @@
+<!-- Header Starts Here 
+  ======================= -->
+
+<section id="landing-carousel">
+    <ngb-carousel [interval]="9000">
+        <ng-template ngbSlide *ngFor="let itm of sliderImages; let i = index">
+            <div class="picsum-img-wrapper" style='background-image:url({{itm.imageUrl}});' alt="Random first slide">
+            </div>
+            <div class="carousel-caption">
+                <div class="bg-layer"></div>
+                <div class="table-cell">
+                    <div class="table-cell-center">
+                        <h1 [innerHTML]="itm.title"></h1>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </ngb-carousel>
+    <div class="scroll-btn">
+        <a href="#content" class="scroll-to-down"><img src="../../assets/img/scroll-button.svg" alt="Scroll Button"></a>
+    </div>
+</section>
+
+<!-- Header Ends Here 
+======================= -->
+
+<!-- Content Starts Here 
+    ======================= -->
+<div id="content" class="content container-fluid">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <h2>get to know our trainers</h2>
+                    <div class="full-div">
+                        <div class="yellow-bar"></div>
+                    </div>
+                    <div class="carousel-container">
+                        <div class="jcarousel-wrapper">
+                            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
+                                (init)="slickInit($event)" (breakpoint)="breakpoint($event)"
+                                (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+                                <a ngxSlickItem [routerLink]="[routesConfig.routes.profile.trainer + '/' + slide.id]"
+                                    *ngFor="let slide of fitnessTrainnerSlides" class="slide"
+                                    href="javascript:void(0);"><img src="{{  slide.imageUrl }}"
+                                        alt="{{ slide.name }}" /><span>{{ slide.name }}</span></a>
+                            </ngx-slick-carousel>
+                            <!--
+                             <a href="javascript:void(0);" class="jcarousel-control-prev"><img
+                                    src="../../assets/img/carousle-arrow-left.svg" alt="carousle-arrow-left"></a>
+                                    
+                            <a href="javascript:void(0);" class="jcarousel-control-next"><img
+                                    src="../../assets/img/carousle-arrow-right.svg" alt="carousle-arrow-right"></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <h2>Compare Fitness Apps</h2>
+                    <div class="full-div">
+                        <div class="yellow-bar"></div>
+                    </div>
+                    <div class="carousel-container">
+                        <div class="jcarousel-wrapper">
+                            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
+                                (init)="slickInit($event)" (breakpoint)="breakpoint($event)"
+                                (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+                                <a ngxSlickItem [routerLink]="[routesConfig.routes.profile.fitnessApp + '/' + slide.id]"
+                                    *ngFor="let slide of fitnessAppSlides" class="slide" href="javascript:void(0);"><img
+                                        src="{{  slide.imageUrl }}"
+                                        alt="{{ slide.name }}" /><span>{{ slide.name }}</span></a>
+                            </ngx-slick-carousel>
+                            <!-- <a href="javascript:void(0);" class="jcarousel-control-prev"><img
+                                    src="../../assets/img/carousle-arrow-left.svg" alt="carousle-arrow-left"></a>
+                            <a href="javascript:void(0);" class="jcarousel-control-next"><img
+                                    src="../../assets/img/carousle-arrow-right.svg" alt="carousle-arrow-right"></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <h2>Discover gyms and class centers near you</h2>
+                    <div class="full-div">
+                        <div class="yellow-bar"></div>
+                    </div>
+                    <div class="carousel-container">
+                        <div class="jcarousel-wrapper">
+                            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
+                                (init)="slickInit($event)" (breakpoint)="breakpoint($event)"
+                                (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+                                <ng-container *ngFor="let slide of businessFitnessGymSlides">
+                                    <a ngxSlickItem *ngIf="slide.eProfileTypeId === eProfileType.BusinessFitnessGym"
+                                        [routerLink]="[routesConfig.routes.profile.gym + '/' + slide.id]" class="slide"
+                                        href="javascript:void(0);"><img src="{{  slide.imageUrl }}"
+                                            alt="{{ slide.name }}" /><span>{{ slide.name }}</span></a>
+
+                                    <a ngxSlickItem *ngIf="slide.eProfileTypeId !== eProfileType.BusinessFitnessGym"
+                                        [routerLink]="[routesConfig.routes.profile.fitnessClass + '/' + slide.id]"
+                                        class="slide" href="javascript:void(0);"><img src="{{  slide.imageUrl }}"
+                                            alt="{{ slide.name }}" /><span>{{ slide.name }}</span></a>
+                                </ng-container>
+                            </ngx-slick-carousel>
+                            <!-- <a href="javascript:void(0);" class="jcarousel-control-prev"><img
+                                    src="../../assets/img/carousle-arrow-left.svg" alt="carousle-arrow-left"></a>
+                            <a href="javascript:void(0);" class="jcarousel-control-next"><img
+                                    src="../../assets/img/carousle-arrow-right.svg" alt="carousle-arrow-right"></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <h2>Explore health and nutrition apps</h2>
+                    <div class="full-div">
+                        <div class="yellow-bar"></div>
+                    </div>
+                    <div class="carousel-container">
+                        <div class="jcarousel-wrapper">
+                            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
+                                (init)="slickInit($event)" (breakpoint)="breakpoint($event)"
+                                (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+                                <a ngxSlickItem [routerLink]="[routesConfig.routes.profile.foodApp + '/' + slide.id]"
+                                    *ngFor="let slide of businessFitnessNeutrationAppSlides" class="slide"
+                                    href="javascript:void(0);"><img src="{{  slide.imageUrl }}"
+                                        alt="{{ slide.name }}" /><span>{{ slide.name }}</span></a>
+                            </ngx-slick-carousel>
+                            <!-- <a href="javascript:void(0);" class="jcarousel-control-prev"><img
+                                    src="../../assets/img/carousle-arrow-left.svg" alt="carousle-arrow-left"></a>
+                            <a href="javascript:void(0);" class="jcarousel-control-next"><img
+                                    src="../../assets/img/carousle-arrow-right.svg" alt="carousle-arrow-right"></a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Content Ends Here 
+  ====================== -->

@@ -1,0 +1,94 @@
+<footer class="container-fluid">
+<div class="row">
+  <!-- Footer Top -->
+  <div class="footer-top container-fluid">
+      <div class="row">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-4 col-sm-12 col-lg-2 footer-logo-container">
+                      <a href="/" class="footer-logo"><img src="../../assets/img/logo.svg" alt="Fit Center"></a>
+                  </div>
+                  <div class="col-md-4 col-sm-6 col-lg-2">
+                      <h6> Trainers & Specialists</h6>
+                      <ul class="footer-nav">
+                          <li><a href="javascript:void(0);" [routerLink]="[routesConfig.routes.appSearching.main + '/' + goToAppSearch({SearchType: eSearchType.TrainerSearch, type: eTrainerExpertyType.FitnessTrainers}, 'Trainers & Specialists - Fitness Trainers')]">Fitness Trainers</a></li>
+                          <li><a href="javascript:void(0);" [routerLink]="[routesConfig.routes.appSearching.main + '/' + goToAppSearch({SearchType: eSearchType.TrainerSearch, type: eTrainerExpertyType.SpacialityTrainers}, 'Trainers & Specialists - Specialty Trainers')]">Specialty Trainers</a></li>
+                          <li><a href="javascript:void(0);" [routerLink]="[routesConfig.routes.appSearching.main + '/' + goToAppSearch({SearchType: eSearchType.TrainerSearch, type: eTrainerExpertyType.MindBody}, 'Trainers & Specialists - Mind & Body')]">Mind & Body</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-md-4 col-sm-6 col-lg-2">
+                      <h6>Gyms & Home Fitness</h6>
+                      <ul class="footer-nav">
+                          <li><a href="javascript:void(0);" [routerLink]="[routesConfig.routes.appSearching.main + '/' + goToAppSearch({SearchType: eSearchType.AppSearch}, 'Gyms & Home Fitness - Fitness App')]">Fitness Apps</a></li>
+                          <li><a href="javascript:void(0);" [routerLink]="[routesConfig.routes.appSearching.main + '/' + goToAppSearch({SearchType: eSearchType.GYMSearch}, 'Gyms & Home Fitness - Gyms')]">Gyms</a></li>
+                          <li><a href="javascript:void(0);" [routerLink]="[routesConfig.routes.appSearching.main + '/' + goToAppSearch({SearchType: eSearchType.ClassSearch}, 'Gyms & Home Fitness - Classes & Studios')]">Classes & Studios</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-md-4 col-sm-6 col-lg-2">
+                      <h6>Health & Nutrition</h6>
+                      <ul class="footer-nav">
+                          <li><a href="javascript:void(0);" [routerLink]="[routesConfig.routes.appSearching.main + '/' + goToAppSearch({SearchType: eSearchType.NutritionSearch}, 'Health & Nutrition - Nutrition & Food Apps')]">Health & Nutrition Apps</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-md-4 col-sm-6 col-lg-2" *ngIf="!isLoggedin">
+                      <h6>Join the Community</h6>
+                      <ul class="footer-nav">
+                        <li><a [routerLink]="[routesConfig.routes.account.login]">Sign In</a></li>
+                        <li><a [routerLink]="[routesConfig.routes.joincommunity.basePath]">Register</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-md-4 col-sm-6 col-lg-2">
+                      <h6>Social Network</h6>
+                      <ul class="footer-social-nav">
+                          <li>
+                              <a href="javascript:void(0);" target="_blank">
+                                  <img src="../../assets/img/facebook.svg" alt="facebook">
+                                  <img src="../../assets/img/facebook-yellow.svg" alt="facebook">
+                                  Facebook
+                              </a>
+                          </li>
+                          <li>
+                            <a href="javascript:void(0);" target="_blank">
+                                <img src="../../assets/img/instagram.svg" alt="intagram">
+                                <img src="../../assets/img/instagram-yellow.svg" alt="intagram">
+                                Instagram
+                            </a>
+                        </li>
+                          <li>
+                              <a href="javascript:void(0);" target="_blank">
+                                  <img src="../../assets/img/linkedin.svg" alt="linkedin">
+                                  <img src="../../assets/img/linkedin-yellow.svg" alt="linkedin">
+                                  LinkedIn
+                              </a>
+                          </li>
+                          
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Footer Top -->
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom container-fluid">
+      <div class="row">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12 col-sm-12 col-lg-12">
+                      <p>Copyright 2021 FitCentr - All Rights Reserved. <a href="javascript:void(0);" [routerLink]="[routesConfig.routesNames.privacyPolicy]">Privacy
+                              Policy</a> - <a href="javascript:void(0);" [routerLink]="[routesConfig.routesNames.termsConditions]">Terms & Conditions</a>
+                            - <a href="javascript:void(0);" [routerLink]="[routesConfig.routesNames.CookiesPolicy]">Cookies Policy</a>
+                            - <a href="javascript:void(0);" [routerLink]="[routesConfig.routesNames.CookiesManagemnt]">Cookies Management</a>
+                            - <a href="javascript:void(0);" [routerLink]="[routesConfig.routesNames.subscriberagreement]">Subscriber Agreement</a>
+                            </p>
+                              
+                  </div>
+                
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Footer Bottom -->
+</div>
+</footer>

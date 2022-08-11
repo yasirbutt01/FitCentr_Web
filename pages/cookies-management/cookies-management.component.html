@@ -1,0 +1,133 @@
+<div id="privacy-terms" class="inner-content container-fluid">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <h1><b>Cookies in FitCentr </b></h1>
+                    <p>Cookies are files saved on your phone, tablet, or computer when you visit FitCenter. We use
+                        cookies to make FitCenter work, to have it operate smoothly, and to collect certain information.
+                    </p>
+                    <h5><b>Cookie settings</b> </h5>
+                    <p>
+                        We use 3 types of cookies. Enable those you allow us to use.
+                    </p>
+                    <h5>
+                        <b>Cookies that help us to improve the product </b>
+                    </h5>
+                    <p>
+                        We use anonymous tracking cookies to collect information on how you use FitCenter. It helps us
+                        make FitCenter better. Tracking cookies do not identify anyone. They store anonym yed
+                        information about FitCenter pages you visited, time your spent on them, and page objects you
+                        clicked on. We do not share the collected data with third-party services.
+                    </p>
+                    <form #f="ngForm"
+                    [formGroup]="yourForm" novalidate>
+                    <div class="full-div">
+                        <label class="radio-container-policy">Yes
+                            <input type="radio"  formControlName="cookiesfirst"   name="cookiesfirst" value="Yes">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="radio-container-policy">No
+                            <input type="radio" name="cookiesfirst" formControlName="cookiesfirst" value="No">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <h5>
+                        <b>
+                            Cookies that help with our communications and marketing
+                        </b>
+                    </h5>
+                    <p>
+                        These cookies collect information about your FitCenter preferences and help us provide you with
+                        personal recommendations.
+                    </p>
+                    <style>
+                        .radio-container-policy {
+                            display: inline-block;
+                            position: relative;
+                            padding-left: 30px;
+                            margin-bottom: 12px;
+                            cursor: pointer;
+                            font-size: 16px;
+                            font-weight: bold;
+                            margin-right: 14px;
+                            -webkit-user-select: none;
+                            -moz-user-select: none;
+                            -ms-user-select: none;
+                            user-select: none;
+                        }
+
+                        .radio-container-policy input {
+                            position: absolute;
+                            opacity: 0;
+                            cursor: pointer;
+                        }
+
+                        .radio-container-policy .checkmark {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 20px;
+                            width: 20px;
+                            background-color: #eee;
+                            border-radius: 50%;
+                        }
+
+                        .radio-container-policy:hover input~.checkmark {
+                            background-color: #ccc;
+                        }
+
+                        .radio-container-policy input:checked~.checkmark {
+                            background-color: #29AF36;
+                        }
+
+                        .radio-container-policy .checkmark:after {
+                            content: "";
+                            position: absolute;
+                            display: none;
+                        }
+
+                        .radio-container-policy input:checked~.checkmark:after {
+                            display: block;
+                        }
+
+                        .radio-container-policy .checkmark:after {
+                            top: 6px;
+                            left: 6px;
+                            width: 6px;
+                            height: 6px;
+                            border-radius: 50%;
+                            background: white;
+                        }
+                    </style>
+                    <div class="full-div">
+                        <label class="radio-container-policy">Yes
+                            <input type="radio"  formControlName="cookiessecond" name="cookiessecond" value="yes">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="radio-container-policy">No
+                            <input type="radio" formControlName="cookiessecond" name="cookiessecond" value="No">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <h5>
+                        <b>Strictly necessary cookies </b>
+                    </h5>
+                    <p>
+                        These cookies enable FitCenter core functions such as security, network management and
+                        accessibility. These cookies always need to be on. Necessary cookies also include functional
+                        cookies that are in charge of personalization and usability improvements If example,
+                        language settings, font size, and prefilled forms)... may disable necessary cookies in your browser
+                      
+                    </p>
+                    <!-- <p>
+                        <a style="color: #29AF36;" href="">See the detailed description of the used cookies <i class="fa fa-external-link"></i></a>
+                    </p> -->
+                    <button type="submit" class="reg-btn-small green-trans" (click)="submitForm()" style="margin-right:10px;" >Save Changes</button>
+                    <a class="reg-btn-small grey-trans" (click)="CancelClick()" >Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

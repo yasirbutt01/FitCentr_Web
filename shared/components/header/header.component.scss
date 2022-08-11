@@ -1,0 +1,161 @@
+// @import "../../../styles/mixins";
+
+// :host(app-header) {
+//   padding-top: 0;
+//   padding-bottom: 6.5rem;
+//   display: grid;
+
+//   header {
+//     position: fixed;
+//     z-index: 999;
+//     width: 100%;
+
+//     nav {
+//       display: flex;
+//       flex-wrap: wrap;
+//       align-items: center;
+//       padding: 0 calculateRem(16px);
+//       color: $secondary--color;
+//       height: 4rem;
+//       background: $primary--color;
+
+//       .mat-raised-button {
+//         color: $primary--color;
+//         margin-right: 1rem;
+//       }
+
+      .progress-bar {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        //height: calculateRem(8px);
+      }
+
+      .mat-progress-bar{
+        position:fixed;
+        top:0px;
+        z-index: 999999999;
+        height: 6px !important;
+       }
+       
+       /* Absolute Center Spinner */
+.loading-indicator {
+    position: fixed;
+    z-index: 999;
+    height: 2em;
+    width: 2em;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  
+  /* Transparent Overlay */
+  .loading-indicator:before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+  }
+
+//       a {
+//         text-transform: uppercase;
+//       }
+
+//       .icon__image {
+//         width: calculateRem(20px);
+//         height: calculateRem(20px);
+//       }
+
+//       img {
+//         vertical-align: middle;
+//       }
+
+//       #today {
+//         font-size: 0.7rem;
+//       }
+
+//       #logo {
+//         display: flex;
+//         margin-right: 1rem;
+
+//         a {
+//           width: 4.25rem;
+//           height: 4.25rem;
+
+//           img {
+//             width: 100%;
+//             height: auto;
+//             opacity: 0.8;
+
+//             &:hover {
+//               opacity: 1;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @media (max-width: 807px) {
+//   #today {
+//     width: 50%;
+//   }
+
+//   #logo {
+//     display: none;
+//   }
+// }
+
+// @media (max-width: 680px) {
+//   :host(app-header) {
+//     padding-top: 0;
+//     padding-bottom: 1rem;
+
+//     header {
+//       position: relative;
+
+//       nav {
+//         height: 7rem;
+//         display: flex;
+//         padding: 1rem 2rem 0;
+
+//         > div {
+//           margin-top: 1rem;
+//         }
+
+//         #today {
+//           margin-top: 1rem;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @media (max-width: 425px) {
+//   :host(app-header) {
+//     padding-bottom: 0;
+
+//     header {
+//       nav {
+//         app-search-bar {
+//           width: 75%;
+//         }
+//       }
+//     }
+//   }
+// }
+#landing-carousel.carousel h1 span {
+  display: inline-block;
+  width: 100%;
+  font-size: 40px;
+  font-weight: 300;
+}
+
